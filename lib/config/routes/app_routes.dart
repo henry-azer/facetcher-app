@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/features/login/presentation/screens/login_screen.dart';
 
 import '../../core/utils/app_strings.dart';
-import '../../features/home/presentation/screens/home_screen.dart';
+import '../../features/drawing _details/drawing_details_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 
 class Routes {
   static const String initial = '/';
   static const String appHome = '/app-home';
   static const String login = '/login';
+  static const String drawingDetails = '/drawing_details';
+
 }
+
 
 class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
@@ -35,6 +38,13 @@ class AppRoutes {
             },
             settings: routeSettings);
 
+      case Routes.drawingDetails:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const DrawingDetailsScreen();
+            },
+            settings: routeSettings);
+
       default:
         return undefinedRoute();
     }
@@ -49,3 +59,4 @@ class AppRoutes {
             )));
   }
 }
+
