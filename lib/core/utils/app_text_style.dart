@@ -18,6 +18,20 @@ class AppTextStyle with Diagnosticable {
     color: AppColors.white,
     fontFamily: AppStrings.fontFamilyComfortaa,
   );
+  static TextStyle? screensTitle = TextStyle(
+    fontSize: 35,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: AppStrings.fontFamilyComfortaa,
+    wordSpacing: 5
+  );
+
+  static TextStyle? screensTitleDetails = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
+    fontFamily: AppStrings.fontFamilyComfortaa,
+  );
 
   static TextStyle? homeText = TextStyle(
     fontSize: 18,
@@ -32,6 +46,20 @@ class AppTextStyle with Diagnosticable {
       color: AppColors.grey,
       fontFamily: AppStrings.fontFamilyBarlow,
       height: 1.2);
+
+  static TextStyle? drawingDetailsFieldTitle = TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
+      color: AppColors.grey,
+      fontFamily: AppStrings.fontFamilyBarlow,
+      );
+
+  static TextStyle? drawingDetailsField = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: AppColors.grey,
+    fontFamily: AppStrings.fontFamilyBarlow,
+  );
 
   static TextStyle? loginText = TextStyle(
     fontSize: 16,
