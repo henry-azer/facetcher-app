@@ -81,8 +81,8 @@ class LoginScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(
                               top: 70.0, bottom: 10, left: 15, right: 15),
                           child: TextFieldWidget(
-                            label: 'Email',
-                            labelStyle: AppTextStyle.loginDetailsText,
+                            hintText: 'Email',
+                            hintTextStyle: AppTextStyle.loginDetailsText,
                             errorStyle: TextStyle(color: AppColors.error),
                             borderWidth: 1,
                             borderColor: AppColors.grey,
@@ -98,14 +98,15 @@ class LoginScreen extends StatelessWidget {
                             ),
                             style: AppTextStyle.loginDetailsText,
                             cursorColor: AppColors.secondaryColor,
+                            maxLines: 1,
                           ),
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsets.only(top: 30, left: 15, right: 15),
+                          padding: const EdgeInsets.only(
+                              top: 30, left: 15, right: 15),
                           child: TextFieldWidget(
-                            label: 'Password',
-                            labelStyle: AppTextStyle.loginDetailsText,
+                            hintText: 'Password',
+                            hintTextStyle: AppTextStyle.loginDetailsText,
                             errorStyle: TextStyle(color: AppColors.error),
                             borderWidth: 1,
                             borderColor: AppColors.grey,
@@ -121,6 +122,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             style: AppTextStyle.loginDetailsText,
                             cursorColor: AppColors.secondaryColor,
+                            maxLines: 1,
                           ),
                         ), // Padding(
                         Expanded(
