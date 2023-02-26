@@ -40,7 +40,7 @@ flutter:
     - lang/en.json
     - assets/images/user.png
     - assets/images/2x/Logo.png
-    - assets/images/shape.png
+    - assets/images/userProfile.png
 
   fonts:
     - family: Tajawal
