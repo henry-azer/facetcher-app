@@ -25,7 +25,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         CircleAvatar(
           backgroundColor: AppColors.secondaryColor,
           radius: 50,
-          child: Image.asset(widget.userProfile),
+          child: Image.asset(widget.userProfile,fit: BoxFit.fill,),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
