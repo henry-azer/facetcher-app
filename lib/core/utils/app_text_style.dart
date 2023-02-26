@@ -44,6 +44,20 @@ class AppTextStyle with Diagnosticable {
     color: AppColors.grey,
     fontFamily: AppStrings.fontFamilyComfortaa,
   );
+
+  static TextStyle? userProfileTitle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w700,
+    color: AppColors.grey,
+    fontFamily: AppStrings.fontFamilyComfortaa,
+  );
+  static TextStyle? userProfileDetails = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: AppStrings.fontFamilyComfortaa,
+  );
+
   static TextStyle? loginDetailsText = TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.bold,
