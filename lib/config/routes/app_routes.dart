@@ -3,23 +3,11 @@ import 'package:flutter_starter/features/changed_password/presentation/screens/c
 import 'package:flutter_starter/features/user-history/presentation/screens/user_history_screen.dart';
 
 import '../../core/utils/app_strings.dart';
-import '../../features/drawing _details/presentation/screens/drawing_details_screen.dart';
+import '../../features/drawing _details/drawing_details_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/login/presentation/screens/login_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 import '../../features/user-profile/presentation/screens/user_profile_screen.dart';
-
-class Routes {
-  static const String initial = '/';
-  static const String appHome = '/app-home';
-  static const String login = '/login';
-  static const String drawingDetails = '/drawing_details';
-  static const String userHistory = '/user-history';
-  static const String userProfile = '/user-profile';
-  static const String changingPassword = '/changing_password';
-
-
-}
 
 class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
@@ -78,4 +66,16 @@ class AppRoutes {
           ),
         )));
   }
+}
+
+class Routes {
+  static const String initial = '/';
+  static const String appHome = '/app-home';
+  static const String login = '/login';
+  static const String drawingDetails = '/drawing_details';
+  static const String userHistory = '/user-history';
+  static const String userProfile = '/user-profile';
+  static const String changingPassword = '/changing_password';
+
+
 }
