@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter/core/utils/app_colors.dart';
 import 'package:flutter_starter/core/validation/validation_types.dart';
 import 'package:flutter_starter/core/widgets/app_bar_widget.dart';
+import 'package:flutter_starter/core/widgets/forms/profile_widget.dart';
 import 'package:flutter_starter/core/widgets/forms/text_field_widget.dart';
 
 import '../../../../core/utils/app_text_style.dart';
@@ -43,30 +44,7 @@ class ChangingPassword extends StatelessWidget {
                         flex: 1,
                         child: Column(
                           children: [
-                            CircleAvatar(
-                              backgroundColor: AppColors.secondaryColor,
-                              radius: 50,
-                              child: Image.asset('assets/images/shape.png'),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'User Name',
-                                        style: AppTextStyle.profileText,
-                                      ),
-                                      TextSpan(
-                                        text: '\n\t\t\t\t @username',
-                                        style: AppTextStyle.profileNiceText,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
+                            ProfileWidget(userName: 'UserName', subTitle: '@username', userProfile: 'assets/images/userProfile.png',),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
