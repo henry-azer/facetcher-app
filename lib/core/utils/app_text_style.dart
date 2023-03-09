@@ -106,4 +106,16 @@ class AppTextStyle with Diagnosticable {
     fontFamily: AppStrings.fontFamilyComfortaa,
     height: 1,
   );
+  static TextStyle? paginationTextStyle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    color: AppColors.grey,
+    fontFamily: AppStrings.fontFamilyComfortaa,
+  );
+  static TextStyle? userHistoryTitle = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: AppStrings.fontFamilyComfortaa,
+  );
 }
