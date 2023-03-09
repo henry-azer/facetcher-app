@@ -25,6 +25,7 @@ dependencies:
   loading_animation_widget: ^1.2.0+3
   im_animations: ^0.1.2
   font_awesome_flutter: ^10.4.0
+  number_paginator: ^0.2.3
 
 dev_dependencies:
   flutter_lints: ^2.0.0
