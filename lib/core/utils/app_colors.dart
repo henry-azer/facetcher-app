@@ -6,8 +6,15 @@ class AppColors {
   static Color primary = HexColor('#000020');
   static Color hint = HexColor('#FFFFFF');
 
+  static Color textPrimary = HexColor('##EAEAEA');
+  static Color textSecondary = HexColor('#B3B4B4');
+
+  static Color navigatorItem = HexColor('#07ABB3');
+  static Color navigatorFont = HexColor('#EAEAEA');
+  static Color navigatorBackground = HexColor('#1E1E1E');
+
   static Color error = HexColor('#900C3F');
-  static Color background = HexColor('#000020');
+  static Color background = HexColor('#3D4149');
 
   static Color fontPrimary = HexColor('#FFFFFF');
   static Color fontSecondary = HexColor('#E8C39E');

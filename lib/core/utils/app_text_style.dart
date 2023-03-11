@@ -28,8 +28,8 @@ class AppTextStyle with Diagnosticable {
 
   static TextStyle? loginDetailsText = TextStyle(
       fontSize: 16,
-      fontWeight: FontWeight.bold,
-      color: AppColors.grey,
+      fontWeight: FontWeight.w400,
+      color: AppColors.textSecondary,
       fontFamily: AppStrings.fontFamilyBarlow,
       height: 1.2);
 

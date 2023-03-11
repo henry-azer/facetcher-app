@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'What we try to do is to reach the criminal together and '
-                      'get the best result in the shortest time.',
+                          'get the best result in the shortest time.',
                       style: AppTextStyle.loginDetailsText,
                       textAlign: TextAlign.center,
                     ),
@@ -81,8 +81,8 @@ class LoginScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(
                               top: 70.0, bottom: 10, left: 15, right: 15),
                           child: TextFieldWidget(
-                            label: 'Email',
-                            labelStyle: AppTextStyle.loginDetailsText,
+                            hintText: 'Email',
+                            hintTextStyle: AppTextStyle.loginDetailsText,
                             errorStyle: TextStyle(color: AppColors.error),
                             borderWidth: 1,
                             borderColor: AppColors.grey,
@@ -97,15 +97,16 @@ class LoginScreen extends StatelessWidget {
                               left: 30,
                             ),
                             style: AppTextStyle.loginDetailsText,
-                            cursorColor: AppColors.secondaryColor,
+                            cursorColor: AppColors.textSecondary,
+                            maxLines: 1,
                           ),
                         ),
                         Padding(
-                          padding:
-                              const EdgeInsets.only(top: 30, left: 15, right: 15),
+                          padding: const EdgeInsets.only(
+                              top: 30, left: 15, right: 15),
                           child: TextFieldWidget(
-                            label: 'Password',
-                            labelStyle: AppTextStyle.loginDetailsText,
+                            hintText: 'Password',
+                            hintTextStyle: AppTextStyle.loginDetailsText,
                             errorStyle: TextStyle(color: AppColors.error),
                             borderWidth: 1,
                             borderColor: AppColors.grey,
@@ -120,7 +121,8 @@ class LoginScreen extends StatelessWidget {
                               left: 30,
                             ),
                             style: AppTextStyle.loginDetailsText,
-                            cursorColor: AppColors.secondaryColor,
+                            cursorColor: AppColors.textSecondary,
+                            maxLines: 1,
                           ),
                         ), // Padding(
                         Expanded(
