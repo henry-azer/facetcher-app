@@ -59,7 +59,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       cursorColor: widget.cursorColor,
       decoration: InputDecoration(
           labelText: widget.label,
-          floatingLabelStyle: TextStyle(color: AppColors.fontPrimary),
+          floatingLabelStyle: widget.labelStyle,
           contentPadding: const EdgeInsets.only(left: 22, right: 22),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.0),

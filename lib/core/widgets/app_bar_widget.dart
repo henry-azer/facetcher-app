@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../config/routes/app_routes.dart';
-import '../utils/app_colors.dart';
-import '../utils/assets_manager.dart';
-
 class AppBarWidget extends StatefulWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
+  final Widget leftChild;
+  final Widget rightChild;
+
+  const AppBarWidget({Key? key, required this.leftChild, required this.rightChild}) : super(key: key);
 
   @override
   State<AppBarWidget> createState() => _AppBarWidgetState();
@@ -15,21 +14,10 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10, top: 45, bottom: 10),
+      padding: const EdgeInsets.only(left: 20, right: 30, top: 50, bottom: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          IconButton(
-            icon: Icon(Icons.arrow_back, color: AppColors.white),
-            onPressed: () => Navigator.pop(context),
-          ),
-
-          IconButton(
-            icon: Icon(Icons.menu, color: AppColors.white),
-            onPressed: () => Navigator.pushReplacementNamed(context, Routes
-                .appHome),
-          ),
-        ],
+        children: [widget.leftChild, widget.rightChild],
       ),
     );
   }
