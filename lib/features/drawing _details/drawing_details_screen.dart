@@ -39,7 +39,7 @@ class _DrawingDetailsScreenState extends State<DrawingDetailsScreen> {
               children: [
                 const AppBarWidget(),
                 Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   child: RichText(
                     text: TextSpan(
                       children: [
