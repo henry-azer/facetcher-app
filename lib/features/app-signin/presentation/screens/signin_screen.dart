@@ -44,7 +44,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 SizedBox(
                   width: 130,
                   child: Hero(
-                      tag: 'splash-logo', child: Image.asset(ImgAssets.logo)),
+                      tag: 'login-logo', child: Image.asset(ImgAssets.logo)),
                 ),
                 Expanded(
                   flex: 1,

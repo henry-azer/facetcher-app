@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter/config/routes/app_routes.dart';
+import 'package:flutter_starter/core/widgets/buttons/button_widget.dart';
 import 'package:flutter_starter/core/widgets/navigator/navigation_bar_wrapper.dart';
 import 'package:flutter_starter/features/drawing-screen/presentation/widget/drawer_widget.dart';
 
@@ -59,8 +61,26 @@ class _DrawingScreenState extends State<DrawingScreen> {
                   padding: EdgeInsets.symmetric(vertical: 15.0),
                   child: DrawerWidget(),
                 ),
-                // TODO : update with the last button widget
-                // ButtonWidget(text: "Next", icon: Icons.arrow_forward),
+                ButtonWidget(
+                  backgroundColor: AppColors.navigatorItem,
+                  onPress: () {
+                    Navigator.pushNamed(context , Routes.appDrawingResult);
+                  },
+                  text: "Next",
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Next",
+                        style: AppTextStyle.primaryButtonText,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Image.asset('assets/icons/shape.png'),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
