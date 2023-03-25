@@ -31,7 +31,7 @@ class AppRoutes {
             builder: (
               context,
             ) {
-              return const DrawingScreen();
+              return const SplashScreen();
             },
             settings: routeSettings);
 
