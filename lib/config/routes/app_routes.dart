@@ -7,6 +7,7 @@ import 'package:flutter_starter/features/user-history/presentation/screens/user_
 import '../../core/utils/app_strings.dart';
 import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
+import '../../features/drawing-screen/presentation/screen/drawing_screen.dart';
 import '../../features/user-profile/presentation/screens/user_profile_screen.dart';
 
 class Routes {
@@ -30,7 +31,7 @@ class AppRoutes {
             builder: (
               context,
             ) {
-              return const SplashScreen();
+              return const DrawingScreen();
             },
             settings: routeSettings);
 
@@ -66,6 +67,13 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) {
               return const DrawingResult();
+            },
+            settings: routeSettings);
+
+      case Routes.appDrawingScreen:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const DrawingScreen();
             },
             settings: routeSettings);
 
