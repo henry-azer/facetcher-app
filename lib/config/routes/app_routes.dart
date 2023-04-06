@@ -7,6 +7,7 @@ import 'package:facetcher/features/user-history/presentation/screens/user_histor
 
 import '../../core/utils/app_strings.dart';
 import '../../features/app-get-started/presentation/screens/get_started_screen.dart';
+import '../../features/app-message-us/presentation/screens/message-us_screen.dart';
 import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
 import '../../features/drawing-details/presentation/screens/drawing_details_screen.dart';
@@ -27,6 +28,7 @@ class Routes {
   static const String appDrawingResult = '/app-drawing-result';
   static const String appDrawingReport = '/app-drawing-report';
   static const String appDrawingDetails = '/app-drawing-details';
+  static const String appMessageUs = '/app-message-us';
 }
 
 class AppRoutes {
@@ -34,14 +36,18 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.initial:
         return MaterialPageRoute(
-            builder: (context,) {
+            builder: (
+              context,
+            ) {
               return const SplashScreen();
             },
             settings: routeSettings);
 
       case Routes.appGetStarted:
         return MaterialPageRoute(
-            builder: (context,) {
+            builder: (
+              context,
+            ) {
               return const GetStartedScreen();
             },
             settings: routeSettings);
@@ -64,6 +70,13 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) {
               return const UserHistoryScreen();
+            },
+            settings: routeSettings);
+
+      case Routes.appMessageUs:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const MessageUs();
             },
             settings: routeSettings);
 
@@ -95,7 +108,7 @@ class AppRoutes {
             },
             settings: routeSettings);
 
-        case Routes.appDrawingScreen:
+      case Routes.appDrawingScreen:
         return MaterialPageRoute(
             builder: (context) {
               return const DrawingScreen();
