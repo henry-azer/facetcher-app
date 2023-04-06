@@ -20,7 +20,7 @@ class MessageUsForm extends StatefulWidget {
 class _MessageUsFormState extends State<MessageUsForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late MessageUsRequest messageUsRequest = MessageUsRequest();
-  bool _isFormEnabled = true;
+  final bool _isFormEnabled = true;
 
   @override
   Widget build(BuildContext context) {
