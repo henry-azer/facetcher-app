@@ -51,24 +51,26 @@ class DrawingDetailsState extends State<DrawingDetailsScreen> {
                     end: 1.0,
                   ),
                 ),
-               Padding(
-                 padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                 child: Column(
-                   children: [
-                     Text("Drawing Details",
-                       style: AppTextStyle.drawingScreenTitle,
-                     ),
-                     Padding(
-                       padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
-                       child: Text("Enter all the details and description for the drawing, as all what you do here is recorded",
-                         textAlign: TextAlign.center,
-                         style: AppTextStyle.drawingScreenTitleDetails,
-                       ),
-                     ),
-                     const DrawingDetailsForm(),
-                   ],
-                 ),
-               ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Drawing Details",
+                        style: AppTextStyle.drawingScreenTitle,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
+                        child: Text(
+                          "Enter all the details and description for the drawing, as all what you do here is recorded",
+                          textAlign: TextAlign.center,
+                          style: AppTextStyle.drawingScreenTitleDetails,
+                        ),
+                      ),
+                      const DrawingDetailsForm(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
