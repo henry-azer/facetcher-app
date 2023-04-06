@@ -8,6 +8,7 @@ import '../../../../core/utils/constants.dart';
 import '../../../../core/validation/validation_types.dart';
 import '../../../../core/widgets/forms/text_field_widget.dart';
 import '../../../drawing-details/domain/entities/drawing_details_request.dart';
+import '../../domain/entities/message_us_request.dart';
 
 class MessageUsForm extends StatefulWidget {
   const MessageUsForm({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class MessageUsForm extends StatefulWidget {
 
 class _MessageUsFormState extends State<MessageUsForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late DrawingDetailsRequest drawingDetailsRequest = DrawingDetailsRequest();
+  late MessageUsRequest messageUsRequest = MessageUsRequest();
   bool _isFormEnabled = true;
 
   @override
@@ -46,7 +47,7 @@ class _MessageUsFormState extends State<MessageUsForm> {
               cursorColor: AppColors.textSecondary,
               secureText: false,
               onSave: (value) {
-                drawingDetailsRequest.title = value;
+                messageUsRequest.title = value;
               },
               contentPadding: const EdgeInsets.only(
                 top: 12,
@@ -71,7 +72,7 @@ class _MessageUsFormState extends State<MessageUsForm> {
                 cursorColor: AppColors.textSecondary,
                 secureText: false,
                 onSave: (value) {
-                  drawingDetailsRequest.description = value;
+                  messageUsRequest.description = value;
                 },
                 contentPadding: const EdgeInsets.only(
                   top: 40,
@@ -84,17 +85,12 @@ class _MessageUsFormState extends State<MessageUsForm> {
               onPress: () {
                 if (_formKey.currentState!.validate()) {
                   _formKey.currentState?.save();
-                  if (drawingDetailsRequest.title.isEmpty) {
+                  if (messageUsRequest.title.isEmpty) {
                     Constants.showSnackBar(
                         context: context, message: "Title can't be blank");
                     return;
                   }
-                  if (drawingDetailsRequest.gender == "NULL") {
-                    Constants.showSnackBar(
-                        context: context, message: "Gender must be assigned");
-                    return;
-                  }
-                  if (drawingDetailsRequest.description.isEmpty) {
+                  if (messageUsRequest.description.isEmpty) {
                     Constants.showSnackBar(
                         context: context,
                         message: "Description can't be blank");
