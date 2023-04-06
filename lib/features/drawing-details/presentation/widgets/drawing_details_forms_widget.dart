@@ -51,15 +51,23 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                   style: AppTextStyle.loginFieldText,
                   cursorColor: AppColors.textSecondary,
                   secureText: false,
-                  onSave: (value) {drawingDetailsRequest.title = value;},
-                  contentPadding: const EdgeInsets.only(top: 12, left: 30,),
+                  onSave: (value) {
+                    drawingDetailsRequest.title = value;
+                  },
+                  contentPadding: const EdgeInsets.only(
+                    top: 12,
+                    left: 30,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 18.0),
                   child: DropdownButtonFormField(
                     iconSize: 30,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
-                    icon: Icon(Icons.keyboard_arrow_down_rounded, color: AppColors.textSecondary,),
+                    icon: Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      color: AppColors.textSecondary,
+                    ),
                     decoration: InputDecoration(
                       contentPadding:
                           const EdgeInsets.only(left: 30, right: 10),
@@ -79,13 +87,19 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                     borderRadius: BorderRadius.circular(25),
                     dropdownColor: AppColors.background,
                     style: AppTextStyle.dropDownItem,
-                    hint: Text('Gender', style: AppTextStyle.dropDownItemTitle,),
+                    hint: Text(
+                      'Gender',
+                      style: AppTextStyle.dropDownItemTitle,
+                    ),
                     items: ['Male', 'Female'].map((item) {
                       return DropdownMenuItem(
                         enabled: true,
                         alignment: Alignment.centerLeft,
                         value: item,
-                        child: Text(item, style: AppTextStyle.dropDownItem,),
+                        child: Text(
+                          item,
+                          style: AppTextStyle.dropDownItem,
+                        ),
                       );
                     }).toList(),
                     onChanged: (value) {
@@ -119,14 +133,20 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                   style: AppTextStyle.loginFieldText,
                   cursorColor: AppColors.textSecondary,
                   secureText: false,
-                  onSave: (value) {drawingDetailsRequest.description = value;},
-                  contentPadding: const EdgeInsets.only(top: 40, left: 30,),
+                  onSave: (value) {
+                    drawingDetailsRequest.description = value;
+                  },
+                  contentPadding: const EdgeInsets.only(
+                    top: 40,
+                    left: 30,
+                  ),
                 ),
               ],
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30.0),
-              child: BlocConsumer<CreateOrUpdateUserSubmissionCubit, CreateOrUpdateUserSubmissionState>(
+              child: BlocConsumer<CreateOrUpdateUserSubmissionCubit,
+                  CreateOrUpdateUserSubmissionState>(
                 builder: ((context, state) {
                   if (state is CreateOrUpdateUserSubmissionLoading) {
                     return AbsorbPointer(
@@ -136,7 +156,10 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                         backgroundColor: AppColors.navigatorItem,
                         child: Padding(
                           padding: const EdgeInsets.only(top: 5),
-                          child: LoadingAnimationWidget.staggeredDotsWave(color: Colors.white, size: 30,),
+                          child: LoadingAnimationWidget.staggeredDotsWave(
+                            color: Colors.white,
+                            size: 30,
+                          ),
                         ),
                       ),
                     );
@@ -147,18 +170,27 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                         if (_formKey.currentState!.validate()) {
                           _formKey.currentState?.save();
                           if (drawingDetailsRequest.title.isEmpty) {
-                            Constants.showSnackBar(context: context, message: "Title can't be blank");
+                            Constants.showSnackBar(
+                                context: context,
+                                message: "Title can't be blank");
                             return;
                           }
                           if (drawingDetailsRequest.gender == "NULL") {
-                            Constants.showSnackBar(context: context, message: "Gender must be assigned");
+                            Constants.showSnackBar(
+                                context: context,
+                                message: "Gender must be assigned");
                             return;
                           }
                           if (drawingDetailsRequest.description.isEmpty) {
-                            Constants.showSnackBar(context: context, message: "Description can't be blank");
+                            Constants.showSnackBar(
+                                context: context,
+                                message: "Description can't be blank");
                             return;
                           }
-                          BlocProvider.of<CreateOrUpdateUserSubmissionCubit>(context).createOrUpdateUserSubmission(drawingDetailsRequest);
+                          BlocProvider.of<CreateOrUpdateUserSubmissionCubit>(
+                                  context)
+                              .createOrUpdateUserSubmission(
+                                  drawingDetailsRequest);
                         }
                       },
                       child: Padding(
@@ -166,9 +198,18 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            Text("Next", style: AppTextStyle.buttonText,),
-                            const SizedBox(width: 4,),
-                            Icon(Icons.arrow_forward_sharp, color: AppColors.textPrimary, size: 17,),
+                            Text(
+                              "Next",
+                              style: AppTextStyle.buttonText,
+                            ),
+                            const SizedBox(
+                              width: 4,
+                            ),
+                            Icon(
+                              Icons.arrow_forward_sharp,
+                              color: AppColors.textPrimary,
+                              size: 17,
+                            ),
                           ],
                         ),
                       ),
@@ -177,10 +218,16 @@ class _DrawingDetailsFormState extends State<DrawingDetailsForm> {
                 }),
                 listener: ((context, state) {
                   if (state is CreateOrUpdateUserSubmissionError) {
-                    Constants.showSnackBar(context: context, message: state.message);
+                    Constants.showSnackBar(
+                        context: context, message: state.message);
                   } else if (state is CreateOrUpdateUserSubmissionSuccess) {
-                    drawingDetailsRequest.submissionId = state.userSubmission.body.id;
-                    Navigator.pushNamed(context, Routes.appDrawingScreen, arguments: state.userSubmission.body.id,);
+                    drawingDetailsRequest.submissionId =
+                        state.userSubmission.body.id;
+                    Navigator.pushNamed(
+                      context,
+                      Routes.appDrawingScreen,
+                      arguments: state.userSubmission.body.id,
+                    );
                   }
                   if (state is CreateOrUpdateUserSubmissionLoading) {
                     setState(() {
