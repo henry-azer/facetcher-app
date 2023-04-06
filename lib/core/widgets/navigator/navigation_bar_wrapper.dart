@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:facetcher/core/utils/app_colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../config/routes/app_routes.dart';
 import 'navigation_bar_widget.dart';
 
 class NavigationBarWrapper extends StatefulWidget {
@@ -63,11 +64,35 @@ class NavigatorState extends State<NavigationBarWrapper> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Icon(FontAwesomeIcons.github, color: AppColors.navigatorFont, size: 21,),
-                  Icon(FontAwesomeIcons.linkedinIn, color: AppColors.navigatorFont, size: 21,),
-                  Icon(Icons.messenger_outline_sharp, color: AppColors.navigatorFont, size: 22,),
-                  Icon(Icons.info_outlined, color: AppColors.navigatorFont, size: 22,),
-                  Icon(Icons.logout_outlined, color: AppColors.navigatorFont, size: 22,),
+                  Icon(
+                    FontAwesomeIcons.github,
+                    color: AppColors.navigatorFont,
+                    size: 21,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.linkedinIn,
+                    color: AppColors.navigatorFont,
+                    size: 21,
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/app-message-us');
+                      },
+                      child: Icon(
+                        Icons.messenger_outline_sharp,
+                        color: AppColors.navigatorFont,
+                        size: 22,
+                      )),
+                  Icon(
+                    Icons.info_outlined,
+                    color: AppColors.navigatorFont,
+                    size: 22,
+                  ),
+                  Icon(
+                    Icons.logout_outlined,
+                    color: AppColors.navigatorFont,
+                    size: 22,
+                  ),
                 ],
               ),
             ),

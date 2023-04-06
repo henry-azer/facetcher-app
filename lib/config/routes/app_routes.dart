@@ -39,7 +39,7 @@ class AppRoutes {
             builder: (
               context,
             ) {
-              return const MessageUs();
+              return const HomeScreen();
             },
             settings: routeSettings);
 
