@@ -39,7 +39,7 @@ class AppRoutes {
             builder: (
               context,
             ) {
-              return const SplashScreen();
+              return const MessageUs();
             },
             settings: routeSettings);
 
