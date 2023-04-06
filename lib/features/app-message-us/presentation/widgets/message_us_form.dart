@@ -7,7 +7,6 @@ import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/validation/validation_types.dart';
 import '../../../../core/widgets/forms/text_field_widget.dart';
-import '../../../drawing-details/domain/entities/drawing_details_request.dart';
 import '../../domain/entities/message_us_request.dart';
 
 class MessageUsForm extends StatefulWidget {
