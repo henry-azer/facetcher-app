@@ -1,7 +1,12 @@
 part of 'message_us_cubit.dart';
 
 @immutable
-abstract class MessageUsState {}
+abstract class MessageUsState extends Equatable {
+  const MessageUsState();
+
+  @override
+  List<Object> get props => [];
+}
 
 class MessageUsInitial extends MessageUsState {}
 
