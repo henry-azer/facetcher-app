@@ -40,7 +40,8 @@ class DrawingDetailsState extends State<DrawingDetailsScreen> {
                 AppBarWidget(
                   leftChild: IconButton(
                     icon: Icon(Icons.arrow_back, color: AppColors.white),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                        context, "/app-home", ModalRoute.withName('/')),
                   ),
                   rightChild: AnimatedIconButton(
                     icon: AnimatedIcons.menu_close,
