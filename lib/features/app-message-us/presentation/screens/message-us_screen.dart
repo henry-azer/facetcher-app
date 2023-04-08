@@ -1,3 +1,4 @@
+import 'package:facetcher/features/app-home-screen/presentation/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_colors.dart';
@@ -39,7 +40,9 @@ class _MessageUsState extends State<MessageUs> {
                 AppBarWidget(
                   leftChild: IconButton(
                     icon: Icon(Icons.arrow_back, color: AppColors.white),
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (c) => HomeScreen()),
+                        (route) => false),
                   ),
                   rightChild: AnimatedIconButton(
                     icon: AnimatedIcons.menu_close,

@@ -7,13 +7,13 @@ import 'navigation_bar_widget.dart';
 
 class NavigationBarWrapper extends StatefulWidget {
   final bool toggleNavigationBar;
-  final String? path;
+  final String?path;
   final Widget child;
 
   const NavigationBarWrapper(
       {super.key,
       required this.toggleNavigationBar,
-      this.path,
+      required this.path,
       required this.child});
 
   @override
