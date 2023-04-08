@@ -9,5 +9,5 @@ class MessageUsRequest extends Equatable {
   @override
   List<Object?> get props => throw UnimplementedError();
 
-  Map<String, dynamic> toPostJson() => {"title": title, "message": message};
+  Map<String, dynamic> toJson() => {"title": title, "message": message};
 }
