@@ -15,16 +15,13 @@ class UserSubmissionRequest extends Equatable {
   @override
   List<Object?> get props => [];
 
-  Map<String, dynamic> toPostJson() => {
-        "title": title,
-        "gender": gender,
-        "description": description,
-      };
+  Map<String, dynamic> toPostJson() =>
+      {"title": title, "gender": gender, "description": description};
 
   Map<String, dynamic> toPutJson() => {
-    "id": submissionId,
-    "title": title,
-    "gender": gender,
-    "description": description,
-  };
+        "id": submissionId,
+        "title": title,
+        "gender": gender,
+        "description": description
+      };
 }
