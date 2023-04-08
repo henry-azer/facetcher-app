@@ -39,14 +39,9 @@ class _MessageUsState extends State<MessageUs> {
               children: [
                 AppBarWidget(
                   leftChild: IconButton(
-                    icon: Icon(Icons.arrow_back, color: AppColors.white),
-                    onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(
-                          maintainState: true,
-                          builder: (c) => HomeScreen(),
-                        ),
-                        (route) => false),
-                  ),
+                      icon: Icon(Icons.arrow_back, color: AppColors.white),
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                          context, "/app-home", ModalRoute.withName('/'))),
                   rightChild: AnimatedIconButton(
                     icon: AnimatedIcons.menu_close,
                     color: AppColors.fontPrimary,
