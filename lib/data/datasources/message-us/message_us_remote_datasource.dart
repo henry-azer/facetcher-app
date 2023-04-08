@@ -9,7 +9,7 @@ import '../../../core/models/response_model.dart';
 import '../../../core/utils/app_strings.dart';
 
 abstract class MessageUsRemoteDataSource {
-  Future<ResponseModel<MessageUs>> createOrUpdateMessage(
+  Future<ResponseModel<MessageUs>> createUserMessage(
       MessageUsRequest messageUsRequest);
 }
 
@@ -19,7 +19,7 @@ class MessageUsRemoteDataSourceImpl implements MessageUsRemoteDataSource {
   MessageUsRemoteDataSourceImpl({required this.apiConsumer});
 
   @override
-  Future<ResponseModel<MessageUs>> createOrUpdateMessage(
+  Future<ResponseModel<MessageUs>> createUserMessage(
       MessageUsRequest messageUsRequest) async {
     final response = await apiConsumer.postFormData(EndPoints.createUserTrial,
         body: messageUsRequest.toJson());
