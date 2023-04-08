@@ -41,7 +41,10 @@ class _MessageUsState extends State<MessageUs> {
                   leftChild: IconButton(
                     icon: Icon(Icons.arrow_back, color: AppColors.white),
                     onPressed: () => Navigator.of(context).pushAndRemoveUntil(
-                        MaterialPageRoute(builder: (c) => HomeScreen()),
+                        MaterialPageRoute(
+                          maintainState: true,
+                          builder: (c) => HomeScreen(),
+                        ),
                         (route) => false),
                   ),
                   rightChild: AnimatedIconButton(
