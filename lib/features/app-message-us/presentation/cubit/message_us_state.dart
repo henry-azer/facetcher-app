@@ -12,6 +12,20 @@ class MessageUsInitial extends MessageUsState {}
 
 class MessageUsLoading extends MessageUsState {}
 
-class MessageUsSuccess extends MessageUsState {}
+class MessageUsSuccess extends MessageUsState {
+  final ResponseModel<MessageUs> messages;
 
-class MessageUsError extends MessageUsState {}
+  const MessageUsSuccess({required this.messages});
+
+  @override
+  List<Object> get props => [messages];
+}
+
+class MessageUsError extends MessageUsState {
+  final String message;
+
+  const MessageUsError({required this.message});
+
+  @override
+  List<Object> get props => [message];
+}
