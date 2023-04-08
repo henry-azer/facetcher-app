@@ -1,6 +1,6 @@
 class MessageUsRequest {
   late String title;
-  late String description;
+  late String message;
 
-  MessageUsRequest(this.title,this.description);
+  MessageUsRequest({required this.title,required this.message});
 }

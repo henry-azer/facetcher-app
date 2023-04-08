@@ -18,7 +18,8 @@ class MessageUsForm extends StatefulWidget {
 
 class _MessageUsFormState extends State<MessageUsForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late MessageUsRequest messageUsRequest = MessageUsRequest();
+  late MessageUsRequest messageUsRequest = MessageUsRequest(
+      title: messageUsRequest.title, message: messageUsRequest.message);
   final bool _isFormEnabled = true;
 
   @override
@@ -71,7 +72,7 @@ class _MessageUsFormState extends State<MessageUsForm> {
                 cursorColor: AppColors.textSecondary,
                 secureText: false,
                 onSave: (value) {
-                  messageUsRequest.description = value;
+                  messageUsRequest.message = value;
                 },
                 contentPadding: const EdgeInsets.only(
                   top: 40,
@@ -89,7 +90,7 @@ class _MessageUsFormState extends State<MessageUsForm> {
                         context: context, message: "Title can't be blank");
                     return;
                   }
-                  if (messageUsRequest.description.isEmpty) {
+                  if (messageUsRequest.message.isEmpty) {
                     Constants.showSnackBar(
                         context: context,
                         message: "Description can't be blank");
