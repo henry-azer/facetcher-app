@@ -39,7 +39,7 @@ class AppRoutes {
             builder: (
               context,
             ) {
-              return const HomeScreen();
+              return const SplashScreen();
             },
             settings: routeSettings);
 
