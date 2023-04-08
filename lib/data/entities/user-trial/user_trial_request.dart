@@ -11,7 +11,7 @@ class UserTrialRequest extends Equatable {
   List<Object?> get props => [];
 
   Map<String, dynamic> toJson() => {
-    "inputImageFile": image,
-    "userSubmissionId": submissionId,
-  };
+        "inputImageFile": image,
+        "userSubmissionId": submissionId,
+      };
 }
