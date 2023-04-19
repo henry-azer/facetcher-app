@@ -9,6 +9,7 @@ import '../../core/utils/app_strings.dart';
 import '../../features/app-get-started/presentation/screens/get_started_screen.dart';
 import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
+import '../../features/app-terms/presentation/screen/app_terms_screen.dart';
 import '../../features/drawing-details/presentation/screens/drawing_details_screen.dart';
 import '../../features/drawing-screen/presentation/screen/drawing_screen.dart';
 import '../../features/user-profile/presentation/screens/user_profile_screen.dart';
@@ -27,6 +28,7 @@ class Routes {
   static const String appDrawingResult = '/app-drawing-result';
   static const String appDrawingReport = '/app-drawing-report';
   static const String appDrawingDetails = '/app-drawing-details';
+  static const String appTerms = '/app-terms';
 }
 
 class AppRoutes {
@@ -35,7 +37,7 @@ class AppRoutes {
       case Routes.initial:
         return MaterialPageRoute(
             builder: (context,) {
-              return const SplashScreen();
+              return const AppTerms();
             },
             settings: routeSettings);
 
@@ -57,6 +59,13 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) {
               return const HomeScreen();
+            },
+            settings: routeSettings);
+
+      case Routes.appTerms:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const AppTerms();
             },
             settings: routeSettings);
 
