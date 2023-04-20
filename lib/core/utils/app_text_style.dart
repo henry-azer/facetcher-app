@@ -222,4 +222,10 @@ class AppTextStyle with Diagnosticable {
     fontFamily: AppStrings.fontFamilyCenturtGothic,
   );
 
+  static TextStyle? termDescription = TextStyle(
+    fontSize: 17,
+    color: AppColors.white,
+    fontWeight: FontWeight.w400,
+    fontFamily: AppStrings.fontFamilyCenturtGothic,
+  );
 }
