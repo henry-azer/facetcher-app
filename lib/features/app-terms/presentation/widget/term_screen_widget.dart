@@ -1,3 +1,5 @@
+import 'package:facetcher/core/utils/app_colors.dart';
+import 'package:facetcher/core/widgets/buttons/button_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_text_style.dart';
@@ -15,6 +17,7 @@ class TermWidget extends StatefulWidget {
   @override
   State<TermWidget> createState() => _TermWidgetState();
 }
+
 class _TermWidgetState extends State<TermWidget> {
   @override
   Widget build(BuildContext context) {
@@ -29,15 +32,36 @@ class _TermWidgetState extends State<TermWidget> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "${widget.title}",
-                  style: AppTextStyle.drawingScreenTitle,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Text(
+                    "${widget.title}",
+                    style: AppTextStyle.drawingScreenTitle,
+                  ),
                 ),
                 Image.network("${widget.imageNetwork}"),
-                Text(
-                  "${widget.description}",
-                  style: AppTextStyle.termDescription,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Text(
+                    "${widget.description}",
+                    style: AppTextStyle.termDescription,
+                  ),
                 ),
+                Center(
+                  child: ButtonWidget(
+                      backgroundColor: AppColors.navigatorItem,
+                      onPress: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Next"),
+                          Icon(
+                            Icons.arrow_forward,
+                            size: 20,
+                          )
+                        ],
+                      )),
+                )
               ],
             ),
           ),
