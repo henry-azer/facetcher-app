@@ -9,7 +9,7 @@ import '../../core/utils/app_strings.dart';
 import '../../features/app-get-started/presentation/screens/get_started_screen.dart';
 import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
-import '../../features/app-terms/presentation/screen/app_terms_screen.dart';
+import '../../features/app-terms/presentation/screen/app_secured_data_screen.dart';
 import '../../features/drawing-details/presentation/screens/drawing_details_screen.dart';
 import '../../features/drawing-screen/presentation/screen/drawing_screen.dart';
 import '../../features/user-profile/presentation/screens/user_profile_screen.dart';
