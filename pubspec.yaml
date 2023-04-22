@@ -27,6 +27,7 @@ dependencies:
   scribble: ^0.9.1
   font_awesome_flutter: ^10.4.0
   permission_handler: ^10.2.0
+  number_paginator: ^0.2.3
 
   animated_custom_dropdown: ^1.5.0
   dropdown_button2: ^2.0.0
