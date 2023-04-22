@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:facetcher/core/utils/app_text_style.dart';
+import 'package:number_paginator/number_paginator.dart';
 import '../../../../core/utils/app_colors.dart';
-import '../../../../core/utils/app_text_style.dart';
+import '../../../../core/widgets/app_bar_widget.dart';
+import '../../../../core/widgets/forms/profile_widget.dart';
+import '../../../../core/widgets/icons/animated_icon_button.dart';
 import '../../../../core/widgets/navigator/navigation_bar_wrapper.dart';
+
 
 class UserHistoryScreen extends StatefulWidget {
   const UserHistoryScreen({Key? key}) : super(key: key);
@@ -11,8 +15,110 @@ class UserHistoryScreen extends StatefulWidget {
   State<UserHistoryScreen> createState() => _UserHistoryScreenState();
 }
 
+class GridList extends StatefulWidget {
+  const GridList({Key? key}) : super(key: key);
+
+  @override
+  State<GridList> createState() => _GridListState();
+}
+class _GridListState extends State<GridList> {
+  final List<Map<String, dynamic>> gridMap = [
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+    },
+    {
+      "title": "V&V  model white t shirts.",
+      "icon":
+      "https://res.cloudinary.com/bookbub/image/upload/t_ci_ar_6:9_padded,f_auto,q_auto,dpr_1/v1503321406/pro_pbid_3987537.jpg",
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      physics: const ScrollPhysics(),
+      shrinkWrap: true,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        crossAxisSpacing: 35.0,
+        mainAxisSpacing: 40.0,
+        mainAxisExtent: 180,
+      ),
+      itemCount: gridMap.length,
+      itemBuilder: (_, index) {
+        return Stack(
+          children: [
+            Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 2,
+                    color: AppColors.white.withOpacity(0.30),
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                  color: AppColors.grey.withOpacity(0.25),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(
+                    'https://res.cloudinary.com/bookbub/image/upload/t_ci_ar_6:9_padded,f_auto,q_auto,dpr_1/v1503321406/pro_pbid_3987537.jpg',
+                    width: 140,
+                    height: 200,
+                    fit: BoxFit.cover,
+                  ),
+                )
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "${gridMap.elementAt(index)['title']}",
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ],
+        );
+      },
+    );
+  }
+}
+
 class _UserHistoryScreenState extends State<UserHistoryScreen> {
   bool _toggleNavigationBar = false;
+
+  int selectedPage = 1;
+  int _numberOfPaages = 10;
+  int currentPage = 1;
 
   void _handleToggleNavigationBar() {
     setState(() {
@@ -22,42 +128,109 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var page = List.generate(_numberOfPaages, (index) =>const GridList());
     return NavigationBarWrapper(
       toggleNavigationBar: _toggleNavigationBar,
       path: ModalRoute.of(context)?.settings.name,
       child: Material(
         child: Scaffold(
-            appBar: AppBar(
-              centerTitle: false,
-              title: Padding(
-                padding: const EdgeInsets.only(top: 30.0, left: 30.0),
-                child: Text(
-                  "Hello Developer!",
-                  style: AppTextStyle.homeText,
+          extendBody: true,
+          resizeToAvoidBottomInset: true,
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: 5,
                 ),
-              ),
-              actions: [
+                AppBarWidget(
+                  leftChild: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back,
+                      color: AppColors.white,
+                      size: 25.0,
+                    ),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  rightChild: AnimatedIconButton(
+                    icon: AnimatedIcons.menu_close,
+                    color: AppColors.fontPrimary,
+                    onPressed: () => _handleToggleNavigationBar(),
+                    durationMilliseconds: 500,
+                    size: 25.0,
+                    end: 1.0,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const ProfileWidget(
+                  userProfileName: 'UserName',
+                  atUserProfileName: 'You use this app for solving 45 cases',
+                  userProfileIcon: 'assets/images/1.5x/shape.png',
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 25.0, right: 35.0),
-                  child: IconButton(
-                      onPressed: () => _handleToggleNavigationBar(),
-                      icon: const Icon(
-                        Icons.menu,
-                        size: 30,
-                      ),
-                      color: AppColors.white),
+                  padding: const EdgeInsets.only(top: 30.0, left: 24),
+                  child: Text(
+                    'Your History',
+                    style: AppTextStyle.userHistoryTitle,
+                  ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      Container(
+                        child: page[currentPage],
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 30, bottom: 5),
+                            child: NumberPaginator(
+                              // from the backend
+                              numberPages: 10,
+                              onPageChange: (page) {
+                                setState(() {
+                                  currentPage = page + 1;
+                                });
+                              },
+                              //the numbers list style
+                              config: NumberPaginatorUIConfig(
+                                  height: 40,
+                                  buttonShape:
+                                  const CircleBorder(side: BorderSide.none),
+                                  buttonSelectedForegroundColor:
+                                  AppColors.textSecondary,
+                                  buttonUnselectedForegroundColor:
+                                  AppColors.textPrimary,
+                                  buttonUnselectedBackgroundColor:
+                                  AppColors.background,
+                                  buttonSelectedBackgroundColor:
+                                  AppColors.navigatorBackground,
+                                  contentPadding:
+                                  const EdgeInsets.only(left: 1, right: 1),
+                                  mainAxisAlignment: MainAxisAlignment.center),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
-            extendBody: true,
-            resizeToAvoidBottomInset: true,
-            body: Center(
-              child: Text(
-                "History",
-                style: AppTextStyle.homeText,
-              ),
-            )),
+          ),
+        ),
       ),
     );
+  }
+
+//to selecting the needed page by index
+  setSelectedPage(int index) {
+    setState(() {
+      currentPage = index;
+    });
   }
 }
