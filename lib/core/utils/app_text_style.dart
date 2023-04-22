@@ -222,4 +222,11 @@ class AppTextStyle with Diagnosticable {
     fontFamily: AppStrings.fontFamilyCenturtGothic,
   );
 
+  static TextStyle? userHistoryTitle = TextStyle(
+    fontSize: 22,
+    fontWeight: FontWeight.w700,
+    color: AppColors.white,
+    fontFamily: AppStrings.fontFamilyCenturtGothic,
+  );
+
 }
