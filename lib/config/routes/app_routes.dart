@@ -11,6 +11,7 @@ import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
 import '../../features/app-terms/presentation/screen/app_password_screen.dart';
 import '../../features/app-terms/presentation/screen/app_secured_data_screen.dart';
+import '../../features/app-terms/presentation/screen/app_terms_conditions_screen.dart';
 import '../../features/app-terms/presentation/screen/app_trials_recorded_screen.dart';
 import '../../features/drawing-details/presentation/screens/drawing_details_screen.dart';
 import '../../features/drawing-screen/presentation/screen/drawing_screen.dart';
@@ -45,7 +46,7 @@ class AppRoutes {
             builder: (
               context,
             ) {
-              return const AppTermsSecuredData();
+              return const SplashScreen();
             },
             settings: routeSettings);
 
@@ -90,6 +91,13 @@ class AppRoutes {
         return MaterialPageRoute(
             builder: (context) {
               return const AppPassword();
+            },
+            settings: routeSettings);
+
+      case Routes.appTermsConditions:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const AppConditions();
             },
             settings: routeSettings);
 
