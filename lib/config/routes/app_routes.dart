@@ -9,7 +9,9 @@ import '../../core/utils/app_strings.dart';
 import '../../features/app-get-started/presentation/screens/get_started_screen.dart';
 import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
+import '../../features/app-terms/presentation/screen/app_password_screen.dart';
 import '../../features/app-terms/presentation/screen/app_secured_data_screen.dart';
+import '../../features/app-terms/presentation/screen/app_trials_recorded_screen.dart';
 import '../../features/drawing-details/presentation/screens/drawing_details_screen.dart';
 import '../../features/drawing-screen/presentation/screen/drawing_screen.dart';
 import '../../features/user-profile/presentation/screens/user_profile_screen.dart';
@@ -28,7 +30,11 @@ class Routes {
   static const String appDrawingResult = '/app-drawing-result';
   static const String appDrawingReport = '/app-drawing-report';
   static const String appDrawingDetails = '/app-drawing-details';
-  static const String appTerms = '/app-terms';
+
+  static const String appTermsSecureData = '/app-terms-secure-data';
+  static const String appTermsTrialsRecorded = '/app-terms-trial-recorded';
+  static const String appTermsPassword = '/app-terms-password';
+  static const String appTermsConditions = '/app-terms-conditions';
 }
 
 class AppRoutes {
@@ -36,14 +42,18 @@ class AppRoutes {
     switch (routeSettings.name) {
       case Routes.initial:
         return MaterialPageRoute(
-            builder: (context,) {
-              return const AppTerms();
+            builder: (
+              context,
+            ) {
+              return const AppTermsSecuredData();
             },
             settings: routeSettings);
 
       case Routes.appGetStarted:
         return MaterialPageRoute(
-            builder: (context,) {
+            builder: (
+              context,
+            ) {
               return const GetStartedScreen();
             },
             settings: routeSettings);
@@ -62,10 +72,24 @@ class AppRoutes {
             },
             settings: routeSettings);
 
-      case Routes.appTerms:
+      case Routes.appTermsSecureData:
         return MaterialPageRoute(
             builder: (context) {
-              return const AppTerms();
+              return const AppTermsSecuredData();
+            },
+            settings: routeSettings);
+
+      case Routes.appTermsTrialsRecorded:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const AppTrialsRecorded();
+            },
+            settings: routeSettings);
+
+      case Routes.appTermsPassword:
+        return MaterialPageRoute(
+            builder: (context) {
+              return const AppPassword();
             },
             settings: routeSettings);
 
@@ -104,7 +128,7 @@ class AppRoutes {
             },
             settings: routeSettings);
 
-        case Routes.appDrawingScreen:
+      case Routes.appDrawingScreen:
         return MaterialPageRoute(
             builder: (context) {
               return const DrawingScreen();
