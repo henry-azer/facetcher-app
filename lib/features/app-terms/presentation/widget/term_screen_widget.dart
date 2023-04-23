@@ -8,11 +8,14 @@ class TermWidget extends StatefulWidget {
   String? title;
   String? description;
   String? imageNetwork;
+  final Function? onpress;
 
-  TermWidget(
-      {required this.title,
-      required this.description,
-      required this.imageNetwork});
+  TermWidget({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.imageNetwork, required this.onpress,
+  });
 
   @override
   State<TermWidget> createState() => _TermWidgetState();
@@ -28,7 +31,7 @@ class _TermWidgetState extends State<TermWidget> {
         body: SafeArea(
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+            const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -50,7 +53,9 @@ class _TermWidgetState extends State<TermWidget> {
                 Center(
                   child: ButtonWidget(
                       backgroundColor: AppColors.navigatorItem,
-                      onPress: () {},
+                      onPress: () {
+                        widget.onpress!();
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
