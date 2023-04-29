@@ -1,9 +1,12 @@
+import 'package:facetcher/data/models/user_history_model/history_web_services/history_web_services.dart';
+import 'package:facetcher/data/repositories/user_history_repository/history.dart';
 import 'package:flutter/material.dart';
 import 'package:facetcher/features/drawing-report/presentation/screens/drawing_report_screen.dart';
 import 'package:facetcher/features/drawing-result/presentation/screens/drawing-result.dart';
 import 'package:facetcher/features/app-home-screen/presentation/screen/home_screen.dart';
 import 'package:facetcher/features/user-changing_password/presentation/screens/user_changing_password.dart';
 import 'package:facetcher/features/user-history/presentation/screens/user_history_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/utils/app_strings.dart';
 import '../../features/app-get-started/presentation/screens/get_started_screen.dart';
@@ -11,6 +14,7 @@ import '../../features/app-signin/presentation/screens/signin_screen.dart';
 import '../../features/app-splash/presentation/screens/splash_screen.dart';
 import '../../features/drawing-details/presentation/screens/drawing_details_screen.dart';
 import '../../features/drawing-screen/presentation/screen/drawing_screen.dart';
+import '../../features/user-history/presentation/cubit/user_history_cubit.dart';
 import '../../features/user-profile/presentation/screens/user_profile_screen.dart';
 
 class Routes {
@@ -31,17 +35,37 @@ class Routes {
 
 class AppRoutes {
   static Route? onGenerateRoute(RouteSettings routeSettings) {
+    //create variables that will passes the data from the UserHistoryRepository
+    //  late UserHistoryRepository userHistoryRepository;
+    //  late UserHistoryCubit userHistoryCubit;
+    // onGenerateRoute() {
+    //   //give each variable it data
+    //   userHistoryRepository = UserHistoryRepository(HistoryWebServices());
+    //   userHistoryCubit = UserHistoryCubit(userHistoryRepository);
+    // }
     switch (routeSettings.name) {
       case Routes.initial:
         return MaterialPageRoute(
-            builder: (context,) {
-              return const SplashScreen();
-            },
+            // builder: (context,) {
+            //   return const UserHistoryScreen();
+            // },
+            builder: (
+              context,
+            ) =>
+                BlocProvider(
+                  create: (
+                      //the userHistorycubit that will take list from
+                      // repository that will get access from webservices
+                      BuildContext context) => UserHistoryCubit(UserHistoryRepository(HistoryWebServices())),
+                  child: const UserHistoryScreen(),
+                ),
             settings: routeSettings);
 
       case Routes.appGetStarted:
         return MaterialPageRoute(
-            builder: (context,) {
+            builder: (
+              context,
+            ) {
               return const GetStartedScreen();
             },
             settings: routeSettings);
@@ -59,7 +83,7 @@ class AppRoutes {
               return const HomeScreen();
             },
             settings: routeSettings);
-
+// creating the bloc-provider
       case Routes.userHistory:
         return MaterialPageRoute(
             builder: (context) {
@@ -95,7 +119,7 @@ class AppRoutes {
             },
             settings: routeSettings);
 
-        case Routes.appDrawingScreen:
+      case Routes.appDrawingScreen:
         return MaterialPageRoute(
             builder: (context) {
               return const DrawingScreen();
