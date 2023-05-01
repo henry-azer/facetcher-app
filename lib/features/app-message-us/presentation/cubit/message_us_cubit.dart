@@ -17,7 +17,7 @@ class MessageUsCubit extends Cubit<MessageUsState> {
   MessageUsCubit({required this.createMessageUsUseCase})
       : super((MessageUsInitial()));
 
-  Future<void> createMessageUs(MessageUsRequest messageUsRequest) async {
+  Future<void> createUserMessageUs(MessageUsRequest messageUsRequest) async {
     emit(MessageUsInitial());
     emit(MessageUsLoading());
     Either<GenericException, ResponseModel<MessageUs>> response =
