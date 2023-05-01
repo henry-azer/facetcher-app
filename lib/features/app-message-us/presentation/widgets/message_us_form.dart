@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
+import '../../../../config/routes/app_routes.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_style.dart';
 import '../../../../core/utils/constants.dart';
@@ -119,7 +120,8 @@ class _MessageUsFormState extends State<MessageUsForm> {
                           return;
                         }
                         //TODO: Create BlocProvider here
-                        //BlocProvider.of<MessageUsCubit>(context).createUserMessageUs(messageUsRequest);
+                        // BlocProvider.of<MessageUsCubit>(context)
+                        //     .createUserMessageUs(messageUsRequest);
                       }
                     },
                     child: Padding(
@@ -150,7 +152,12 @@ class _MessageUsFormState extends State<MessageUsForm> {
                   Constants.showSnackBar(
                       context: context, message: state.message);
                 } else if (state is MessageUsSuccess) {
-                  //TODO: complete the following code
+                  messageUsRequest.submissionId = state.userSubmission.body.id;
+                  Navigator.pushNamed(
+                    context,
+                    Routes.appHome,
+                    arguments: state.userSubmission.body.id,
+                  );
                 }
                 if (state is MessageUsLoading) {
                   setState(() {

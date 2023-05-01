@@ -25,6 +25,6 @@ class MessageUsCubit extends Cubit<MessageUsState> {
             title: messageUsRequest.title, message: messageUsRequest.message));
     emit(response.fold(
         (exception) => MessageUsError(message: exception.message),
-        (userTrial) => MessageUsSuccess(messages: userTrial)));
+        (userSubmission) => MessageUsSuccess(userSubmission: userSubmission)));
   }
 }
